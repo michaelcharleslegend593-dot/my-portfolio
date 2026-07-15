@@ -25,23 +25,25 @@ menuBtn.addEventListener("click", () => {
 const text = "Frontend Web Developer";
 const typing = document.getElementById("typing");
 
-let index = 0;
+if (typing) {
+    let index = 0;
 
-function typeText() {
-    if (index < text.length) {
-        typing.innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeText, 100);
-    } else {
-        setTimeout(() => {
-            typing.innerHTML = "";
-            index = 0;
-            typeText();
-        }, 2000);
+    function typeText() {
+        if (index < text.length) {
+            typing.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeText, 100);
+        } else {
+            setTimeout(() => {
+                typing.innerHTML = "";
+                index = 0;
+                typeText();
+            }, 2000);
+        }
     }
-}
 
-typeText();
+    typeText();
+}
 
 // ======================
 // Back To Top Button
@@ -50,53 +52,61 @@ typeText();
 const topBtn = document.getElementById("topBtn");
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        topBtn.style.display = "block";
-    } else {
-        topBtn.style.display = "none";
+    if (topBtn) {
+        if (window.scrollY > 300) {
+            topBtn.style.display = "block";
+        } else {
+            topBtn.style.display = "none";
+        }
     }
 });
 
-topBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+if (topBtn) {
+    topBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     });
-})
+}
+
 // ======================
 // Scroll Reveal Animation
 // ======================
 
-ScrollReveal({
-    distance: "60px",
-    duration: 1500,
-    delay: 200,
-    reset: false
-});
+if (typeof ScrollReveal !== "undefined") {
 
-ScrollReveal().reveal(".hero-text", {
-    origin: "left"
-});
+    ScrollReveal({
+        distance: "60px",
+        duration: 1500,
+        delay: 200,
+        reset: false
+    });
 
-ScrollReveal().reveal(".hero-image", {
-    origin: "right"
-});
+    ScrollReveal().reveal(".hero-text", {
+        origin: "left"
+    });
 
-ScrollReveal().reveal(".about", {
-    origin: "bottom"
-});
+    ScrollReveal().reveal(".hero-image", {
+        origin: "right"
+    });
 
-ScrollReveal().reveal(".skills", {
-    origin: "bottom"
-});
+    ScrollReveal().reveal(".about", {
+        origin: "bottom"
+    });
 
-ScrollReveal().reveal(".projects", {
-    origin: "bottom"
-});
+    ScrollReveal().reveal(".skills", {
+        origin: "bottom"
+    });
 
-ScrollReveal().reveal(".contact", {
-    origin: "bottom"
-});
+    ScrollReveal().reveal(".projects", {
+        origin: "bottom"
+    });
+
+    ScrollReveal().reveal(".contact", {
+        origin: "bottom"
+    });
+}
 
 // ======================
 // Animate Skill Bars
@@ -107,40 +117,27 @@ const bars = document.querySelectorAll(".progress-bar");
 
 let skillsAnimated = false;
 
-window.addEventListener("scroll", () => {
+function animateSkills() {
+
+    if (!skillSection || skillsAnimated) return;
+
     const sectionTop = skillSection.getBoundingClientRect().top;
 
-    if (sectionTop < window.innerHeight - 100 && !skillsAnimated) {
-        bars.forEach(bar => {
-            const progress = getComputedStyle(bar).getPropertyValue("--progress");
-            bar.style.width = progress;
+    if (sectionTop < window.innerHeight - 100) {
+
+        bars.forEach((bar) => {
+
+            const width = bar.getAttribute("data-width");
+
+            if (width) {
+                bar.style.width = width;
+            }
+
         });
 
         skillsAnimated = true;
     }
-});
-// ======================
-// EmailJS Contact Form
-// ======================
+}
 
-
-emailjs.init({
-    publicKey: "ejehE4yVdP2g9Liw_"
-});
-const contactForm = document.getElementById("contact-form");
-
-contactForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm(
-        "service_mi5c9rc",
-        "template_qzzp5sq",
-        this
-    ).then(() => {
-        alert("✅ Message sent successfully!");
-        contactForm.reset();
-    }).catch((error) => {
-        alert("❌ Failed to send message.");
-        console.error(error);
-    });
-});
+window.addEventListener("scroll", animateSkills);
+window.addEventListener("load", animateSkills);
