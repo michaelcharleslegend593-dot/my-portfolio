@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Michael | Portfolio</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+      <nav class="navbar">
+
+    <h2 class="logo">Michael.</h2>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+
+</nav>
+    </header>
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <h3>Hello, I'm</h3>
+
+        <h1>Michael Charles</h1>
+
+        <h2 id="typing">Frontend Web Developer</h2>
+
+        <p>
+            I build beautiful, responsive and user-friendly
+            websites using HTML, CSS and JavaScript.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#contact" class="btn">Hire Me</a>
+
+            <a href="assets/Michael-Charles-CV.pdf"
+               class="btn btn-outline"
+               download>
+               Download CV
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="images/profile.jpg" alt="Michael Charles">
+
+    </div>
+
+</section>
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about" id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            Hi, I'm <strong>Michael Charles</strong>, a passionate Frontend Web
+            Developer. I enjoy creating modern, responsive and user-friendly
+            websites using HTML, CSS and JavaScript. I love learning new
+            technologies and solving real-world problems through code.
+        </p>
+
+    </section>
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section class="skills" id="skills">
+
+        <h2>My Skills</h2>
+
+
+<div class="skill-card">
+    <h3>HTML5</h3>
+    <p>Building well-structured and semantic web pages.</p>
+
+    <div class="progress">
+        <div class="progress-bar html">95%</div>
+    </div>
+</div>
+
+<div class="skill-card">
+    <h3>CSS3</h3>
+    <p>Creating beautiful, responsive and modern designs.</p>
+
+    <div class="progress">
+        <div class="progress-bar css">90%</div>
+    </div>
+</div>
+      
+<div class="skill-card">
+    <h3>JavaScript</h3>
+    <p>Adding interactivity and dynamic functionality.</p>
+
+    <div class="progress">
+        <div class="progress-bar js">80%</div>
+    </div>
+</div>
+<div class="skill-card">
+    <h3>Git & GitHub</h3>
+    <p>Managing code and collaborating on projects.</p>
+
+    <div class="progress">
+        <div class="progress-bar git">75%</div>
+    </div>
+</div>
+
+
+    </section>
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section class="projects" id="projects">
+
+        <h2>My Projects</h2>
+
+        <div class="project-container">
+
+            <div class="project-card">
+
+                <img src="images/project1.jpg" alt="Portfolio Website">
+
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    A modern responsive portfolio built with HTML and CSS.
+                </p>
+
+                <a href="#">View Project</a>
+
+            </div>
+
+            <div class="project-card">
+
+                <img src="images/project2.jpg" alt="Restaurant Website">
+
+                <h3>Restaurant Website</h3>
+
+                <p>
+                    A stylish restaurant landing page with a modern design.
+                </p>
+
+                <a href="#">View Project</a>
+
+            </div>
+
+            <div class="project-card">
+
+                <img src="images/project3.jpg" alt="E-commerce Website">
+
+                <h3>E-commerce Website</h3>
+
+                <p>
+                    An online shopping website with a clean user interface.
+                </p>
+
+                <a href="#">View Project</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+<section class="contact" id="contact">
+
+    <h2>Contact Me</h2>
+
+    <p>I'd love to hear from you. Feel free to get in touch!</p>
+
+    <form id="contact-form">
+
+        <input
+            type="text"
+            name="from_name"
+            placeholder="Your Name"
+            required>
+
+        <input
+            type="email"
+            name="reply_to"
+            placeholder="Your Email"
+            required>
+
+        <textarea
+            name="message"
+            placeholder="Your Message"
+            required></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</section>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+<footer>
+    <p>© 2026 Michael Charles. All Rights Reserved.</p>
+</footer>
+
+<button id="topBtn" title="Go to top">
+    ↑
+</button>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
